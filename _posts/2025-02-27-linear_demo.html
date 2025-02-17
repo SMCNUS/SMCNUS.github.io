@@ -1,0 +1,240 @@
+---
+permalink: /linearly_separable
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linearly separable Demo</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            zoom: 175%;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            gap: 40px;
+        }
+        .left-panel {
+            flex: 1;
+            max-width: 500px;
+        }
+        .right-panel {
+            flex: 1;
+            padding: 20px;
+            border-left: 2px solid #ccc;
+            margin-left: 20px;
+        }
+        svg { 
+            border: 0px solid #ccc;
+            margin-left: 0;
+        }
+        .point { transition: transform 1s ease-in-out; }
+        .axis-label { font-family: "Times New Roman", serif; font-size: 18px;}
+        #toggle-button {
+            display: block;
+            margin: 5px auto;
+            padding: 8px 16px;
+            cursor: pointer;    
+        }
+        .formula-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>linearly separable Demo</h2>
+            <div>
+                <svg id="plot" width="550" height="400"></svg>
+                <br>
+                <button id="toggle-button" onclick="toggleTransformation()">Transform</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="formula-box">
+                <h2>Instructor</h2>
+                <p>Original transformation formula:</p>
+                <p>\[
+                    x'=
+                    \begin{bmatrix}
+                    (x_1 - \bar{x}_1)^2 \\
+                    (x_2 - \bar{x}_2)^2
+                    \end{bmatrix}
+                    = (x - \bar{x})^{\top} (x - \bar{x})
+                    \]</p>
+                
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 1.</span> Randomly generating some points, we find that it is linearly indistinguishable, so the transformation is projected using the above equation.</p> 
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 2.</span> We choose a point \( (\bar{x}_1,\bar{x}_2) \) at random and assume that \( \bar{x}_1 = 0,\bar{x}_2 = 0\).</p>   
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 3.</span> Click on the <span style="color: blue; font-weight: bold; font-style: italic;">Transform</span> button to see the transformation animation utilizing the formulas.</p>   
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Examples.</span> I offer an example for reference</p>   
+                <p>\[
+                    ( 1.5 , 2 )->
+                    \begin{bmatrix}
+                    (1.5 - 0)^2 \\
+                    (2 - 0)^2
+                    \end{bmatrix}
+                    ->
+                    \begin{bmatrix}
+                    2.25 \\
+                    4
+                    \end{bmatrix}                    
+                    \]</p>     
+                <p><span style="font-weight: bold; font-style: italic;">Therefore</span>, the original point \( (1.5, 2) \) becomes \( (2.25, 4) \) after projection.</p>
+                <p><span style="color: red; font-weight: bold;">Conclusion</span>. All points go from linearly indivisible to linearly divisible after projection.</p>
+        </div>
+    </div>
+
+    <script>
+        const width = 450, height = 300, margin = 50;
+        const svg = d3.select("#plot")
+                      .append("g")
+                      .attr("transform", `translate(${margin}, ${margin})`);
+        
+        let xScale = d3.scaleLinear().domain([-3, 3]).range([0, width]);
+        let yScale = d3.scaleLinear().domain([-3, 3]).range([height, 0]);
+
+        let xAxisLabel = svg.append("text")
+            .attr("id", "x-axis-label")
+            .attr("x", width / 2)
+            .attr("y", height + 40)
+            .style("text-anchor", "middle")
+            .attr("class", "axis-label")
+            .text("x₁");
+        
+        let yAxisLabel = svg.append("text")
+            .attr("id", "y-axis-label")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -40)
+            .style("text-anchor", "middle")
+            .attr("class", "axis-label")
+            .text("x₂");
+
+        let xAxis = svg.append("g")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(xScale));
+        let yAxis = svg.append("g")
+            .call(d3.axisLeft(yScale));
+
+        const numPoints = 100;
+        const radiusInner = 1, radiusOuter = 3;
+        let points = [];
+        
+        function generatePoints() {
+            points = [];
+            for (let i = 0; i < numPoints / 2; i++) {
+                let theta = Math.random() * 2 * Math.PI;
+                points.push({
+                    x: radiusInner * Math.cos(theta) + (Math.random() - 0.5) * 0.4,
+                    y: radiusInner * Math.sin(theta) + (Math.random() - 0.5) * 0.4,
+                    type: "inner"
+                });
+            }
+            
+            for (let i = 0; i < numPoints / 2; i++) {
+                let theta = Math.random() * 2 * Math.PI;
+                points.push({
+                    x: radiusOuter * Math.cos(theta) + (Math.random() - 0.5) * 0.4,
+                    y: radiusOuter * Math.sin(theta) + (Math.random() - 0.5) * 0.4,
+                    type: "outer"
+                });
+            }
+        }
+        
+        generatePoints();
+        let meanX = d3.mean(points, d => d.x);
+        let meanY = d3.mean(points, d => d.y);
+        
+        const circles = svg.selectAll("circle")
+            .data(points)
+            .enter()
+            .append("circle")
+            .attr("cx", d => xScale(d.x))
+            .attr("cy", d => yScale(d.y))
+            .attr("r", 3)
+            .attr("fill", d => d.type === "inner" ? "blue" : "green")
+            .attr("class", "point");
+
+        let transformed = false;
+
+        function toggleTransformation() {
+            const button = document.getElementById("toggle-button");
+            if (!transformed) {
+                let transformedPoints = points.map(d => ({
+                    x: Math.pow(d.x - meanX, 2),
+                    y: Math.pow(d.y - meanY, 2)
+                }));
+
+                let newXExtent = d3.extent(transformedPoints, d => d.x);
+                let newYExtent = d3.extent(transformedPoints, d => d.y);
+
+                xScale.domain(newXExtent).nice();
+                yScale.domain(newYExtent).nice();
+
+                xAxis.transition().duration(1500).call(d3.axisBottom(xScale));
+                yAxis.transition().duration(1500).call(d3.axisLeft(yScale));
+
+                xAxisLabel.transition().duration(750)
+                    .style("opacity", 0)
+                    .on("end", function() {
+                        d3.select(this).text("(x₁ - x̄₁)²").transition().duration(750).style("opacity", 1);
+                    });
+                
+                yAxisLabel.transition().duration(750)
+                    .style("opacity", 0)
+                    .on("end", function() {
+                        d3.select(this).text("(x₂ - x̄₂)²").transition().duration(750).style("opacity", 1);
+                    });
+
+                circles.transition()
+                    .duration(1500)
+                    .attr("cx", d => xScale(Math.pow(d.x - meanX, 2)))
+                    .attr("cy", d => yScale(Math.pow(d.y - meanY, 2)));
+
+                button.textContent = "Restart";
+            } else {
+                xScale.domain([-3, 3]).nice();
+                yScale.domain([-3, 3]).nice();
+
+                xAxis.transition().duration(1500).call(d3.axisBottom(xScale));
+                yAxis.transition().duration(1500).call(d3.axisLeft(yScale));
+
+                xAxisLabel.transition().duration(750)
+                    .style("opacity", 0)
+                    .on("end", function() {
+                        d3.select(this).text("x₁").transition().duration(750).style("opacity", 1);
+                    });
+                
+                yAxisLabel.transition().duration(750)
+                    .style("opacity", 0)
+                    .on("end", function() {
+                        d3.select(this).text("x₂").transition().duration(750).style("opacity", 1);
+                    });
+
+                circles.transition()
+                    .duration(1500)
+                    .attr("cx", d => xScale(d.x))
+                    .attr("cy", d => yScale(d.y));
+
+                button.textContent = "Transform";
+            }
+            transformed = !transformed;
+        }
+    </script>
+</body>
+</html>
