@@ -21,11 +21,12 @@ permalink: /linearly_separable
         .container {
             display: flex;
             width: 100%;
-            gap: 40px;
+            gap: 20px;
         }
         .left-panel {
             flex: 1;
             max-width: 500px;
+            position: relative;
         }
         .right-panel {
             flex: 1;
@@ -34,23 +35,41 @@ permalink: /linearly_separable
             margin-left: 20px;
         }
         svg { 
-            border: 0px solid #ccc;
-            margin-left: 0;
+            overflow: visible;
         }
         .point { transition: transform 1s ease-in-out; }
         .axis-label { font-family: "Times New Roman", serif; font-size: 18px;}
         #toggle-button {
-            display: block;
-            margin: 5px auto;
-            padding: 8px 16px;
-            cursor: pointer;    
+            background-color: #9c9797;
+            color: white;
+            border: none;
+            padding: 8px 8px;
+            font-size: 16px;
+            font-style: italic;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease-in-out;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
+
+        #toggle-button:hover {
+            background-color: #5e5b5b;
+            transform: translate(-50%, -2px);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
         .formula-box {
             background-color: #f9f9f9;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 12px;
+            font-size: 11px;
+        }
+        .formula-box h2 {
+            font-style: italic;
         }
     </style>
 </head>
@@ -67,8 +86,8 @@ permalink: /linearly_separable
 
         <div class="right-panel">
             <div class="formula-box">
-                <h2>Instructor</h2>
-                <p>Original transformation formula:</p>
+                <h2>Instructions for Demonstrating Linear Separability Through Transformation</h2>
+                <p><strong>Kernel Function:</strong></p>
                 <p>\[
                     x'=
                     \begin{bmatrix}
@@ -76,26 +95,32 @@ permalink: /linearly_separable
                     (x_2 - \bar{x}_2)^2
                     \end{bmatrix}
                     = (x - \bar{x})^{\top} (x - \bar{x})
-                    \]</p>
-                
-                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 1.</span> Randomly generating some points, we find that it is linearly indistinguishable, so the transformation is projected using the above equation.</p> 
-                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 2.</span> We choose a point \( (\bar{x}_1,\bar{x}_2) \) at random and assume that \( \bar{x}_1 = 0,\bar{x}_2 = 0\).</p>   
-                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 3.</span> Click on the <span style="color: blue; font-weight: bold; font-style: italic;">Transform</span> button to see the transformation animation utilizing the formulas.</p>   
-                <p><span style="color: red; font-weight: bold; font-style: italic;">Examples.</span> I offer an example for reference</p>   
+                    \]
+                </p>
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 1.</span> Generate a set of random points. We observe that these points are not linearly separable. To address this, we apply the transformation using the given formula.</p>
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 2.</span> Select a point \( (\bar{x}_1,\bar{x}_2) \) at random and assume that \( \bar{x}_1 = 0,\bar{x}_2 = 0\).</p>
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Step 3.</span> Click the <span style="color: blue; font-weight: bold; font-style: italic;">"Transform"</span> button to visualize the transformation process through an animation based on the provided formulas.</p>
+                <p><strong>Example:</strong> An example is provided for reference to illustrate the transformation.</p>
                 <p>\[
-                    ( 1.5 , 2 )->
+                    \begin{bmatrix}
+                    1.5 \\
+                    2 
+                    \end{bmatrix}
+                    \to
                     \begin{bmatrix}
                     (1.5 - 0)^2 \\
                     (2 - 0)^2
                     \end{bmatrix}
-                    ->
+                    \to
                     \begin{bmatrix}
                     2.25 \\
                     4
                     \end{bmatrix}                    
-                    \]</p>     
-                <p><span style="font-weight: bold; font-style: italic;">Therefore</span>, the original point \( (1.5, 2) \) becomes \( (2.25, 4) \) after projection.</p>
-                <p><span style="color: red; font-weight: bold;">Conclusion</span>. All points go from linearly indivisible to linearly divisible after projection.</p>
+                    \]
+                </p> 
+                <p><strong>Result:</strong> The original point \( (1.5, 2) \) is mapped to \( (2.25, 4) \) after projection.</p>
+                <p><span style="color: red; font-weight: bold; font-style: italic;">Conclusion:</span> After applying the transformation, all points that were originally non-linearly separable become linearly separable, demonstrating the effectiveness of the projection.</p>
+            </div>
         </div>
     </div>
 
@@ -166,8 +191,8 @@ permalink: /linearly_separable
             .append("circle")
             .attr("cx", d => xScale(d.x))
             .attr("cy", d => yScale(d.y))
-            .attr("r", 3)
-            .attr("fill", d => d.type === "inner" ? "blue" : "green")
+            .attr("r", 4)
+            .attr("fill", d => d.type === "inner" ? "red" : "blue")
             .attr("class", "point");
 
         let transformed = false;
