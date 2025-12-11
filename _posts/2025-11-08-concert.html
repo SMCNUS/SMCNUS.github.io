@@ -34,37 +34,70 @@ permalink: /seminar_concert_2025
 
 
       <div class="row" id="">
-        <hr style="color:#1878d8;">
-        <h2 class="text-center">Event Program</h2>
-        <hr style="color:#1878d8;">
+        
+        <div style="position: fixed; left: 0; top: 60px; width: 20%; height: calc(100vh - 60px); background-color: #fdf1ed; border-radius: 0 8px 8px 0; border-right: 0px solid #1878d8; overflow-y: auto; padding: 20px 10px; z-index: 100; transition: transform 0.3s ease; transform: translateX(0);" id="sideNav">
 
-        <div style="background-color:#fff9f7;">
-          <p class='text-center'><b style="color:#FF6347;">----------------</b> <b>Seminar Talk</b> <b style="color:#FF6347;">----------------</b></p>
-          <p></p>
-          <p class="text-center"><a href="#intro" style="color:#1878d8;">Opening Remarks - Prof. Ye Wang</a></p>         
-          <p></p>
-          <p class="text-center"><a href="#00" style="color:#1878d8;">Human Voice Production: How to Use Your Voice Effectively but Wisely - Ms. Minjee Kim</a></p>
-                
-          <p></p>
-          <p class='text-center'><b style="color:#FF6347;">----------</b> <b>Concert</b> (scroll to view more) <b style="color:#FF6347;">----------</b></p>
+          <h4 class="text-center" style="color: #FF6347;">Event Program</h4>
+          <hr style="color:#1878d8;">
           
-          <ol style="width: auto; height: 180px; overflow: auto; margin-left: 36%">
-            <li><p><a href="#01" style="color:#1878d8;">Bird Poem</a></p></li>
-            <li><p><a href="#02" style="color:#1878d8;">Like A Star</a></p></li>
-            <li><p><a href="#03" style="color:#1878d8;">Indian Traditional Music</a></p></li>
-            <li><p><a href="#04" style="color:#1878d8;">Say It</a></p></li>
-            <li><p><a href="#05" style="color:#1878d8;">Sing For Absolution</a></p></li>
-            <li><p><a href="#06" style="color:#1878d8;">Sonatina in C</a></p></li>
-            <li><p><a href="#07" style="color:#1878d8;">Lydia</a></p></li>
-            <li><p><a href="#08" style="color:#1878d8;">Serenity</a></p></li>
-            <li><p><a href="#09" style="color:#1878d8;">Omens of Love</a></p></li>
-            <li><p><a href="#10" style="color:#1878d8;">Just the Two of Us</a></p></li>
-            <li><p><a href="#11" style="color:#1878d8;">Body and Soul</a></p></li>
-            <li><p><a href="#12" style="color:#1878d8;">Piano in the Dark & Through the Fire</a></p></li>
+          <p class='text-center' style="font-size: 15px;"><b style="color:#FF6347;">Opening Remarks</b></p>
+          <p class="text-center" style="font-size: 13px;"><a href="#intro" style="color:#1878d8; text-decoration: none;">Opening Remarks - Prof. Ye Wang</a></p>   
+
+          <p class='text-center' style="font-size: 15px; margin-top: 15px;"><b style="color:#FF6347;">Seminar Talk</b></p>
+
+          <p class="text-center" style="font-size: 13px;"><a href="#00" style="color:#1878d8; text-decoration: none;">Human Voice Production: How to Use Your Voice Effectively but Wisely - Ms. Minjee Kim</a></p>
+          
+          <p class='text-center' style="font-size: 15px; margin-top: 15px;"><b style="color:#FF6347;">Concert Program</b></p>
+          
+          <ol style="font-size: 13px; padding-left: 70px; margin: 0px;">
+            <li style="margin-bottom: 5px;"><a href="#01" style="color:#1878d8; text-decoration: none;">Bird Poem</a></li>
+            <li style="margin-bottom: 5px;"><a href="#02" style="color:#1878d8; text-decoration: none;">Like A Star</a></li>
+            <li style="margin-bottom: 5px;"><a href="#03" style="color:#1878d8; text-decoration: none;">Indian Traditional Music</a></li>
+            <li style="margin-bottom: 5px;"><a href="#04" style="color:#1878d8; text-decoration: none;">Say It</a></li>
+            <li style="margin-bottom: 5px;"><a href="#05" style="color:#1878d8; text-decoration: none;">Sing For Absolution</a></li>
+            <li style="margin-bottom: 5px;"><a href="#06" style="color:#1878d8; text-decoration: none;">Sonatina in C</a></li>
+            <li style="margin-bottom: 5px;"><a href="#07" style="color:#1878d8; text-decoration: none;">Lydia</a></li>
+            <li style="margin-bottom: 5px;"><a href="#08" style="color:#1878d8; text-decoration: none;">Serenity</a></li>
+            <li style="margin-bottom: 5px;"><a href="#09" style="color:#1878d8; text-decoration: none;">Omens of Love</a></li>
+            <li style="margin-bottom: 5px;"><a href="#10" style="color:#1878d8; text-decoration: none;">Just the Two of Us</a></li>
+            <li style="margin-bottom: 5px;"><a href="#11" style="color:#1878d8; text-decoration: none;">Body and Soul</a></li>
+            <li><a href="#12" style="color:#1878d8; text-decoration: none;">Piano in the Dark & Through the Fire</a></li>
           </ol>
-        </div>
 
         </div>
+        
+        <div style="position: fixed; left: 0; top: 60px; width: 5px; height: calc(100vh - 60px); background-color: #FF6347; z-index: 99;">
+          <div style="position: fixed; left: 5px; top: 80px; width: 40px; height: 40px; background-color: #fff9f7; border: 1px solid #1878d8; border-left: none; border-radius: 0 8px 8px 0; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 101;">
+            <span style="font-size: 18px;">☰</span>
+          </div>
+        </div>
+        
+      </div>
+
+      <script>
+      const sideNav = document.getElementById('sideNav');
+
+      // Hide nav by default on page load
+      sideNav.style.transform = 'translateX(-100%)';
+      sideNav.style.transition = 'none';
+      setTimeout(() => {
+        sideNav.style.transition = 'transform 0.3s ease';
+      }, 10);
+
+      document.addEventListener('mousemove', function(e) {
+        if (e.clientX < 300) {
+          sideNav.style.transform = 'translateX(0)';
+        } else {
+          sideNav.style.transform = 'translateX(-100%)';
+        }
+      });
+
+      sideNav.addEventListener('mouseleave', function() {
+        sideNav.style.transform = 'translateX(-100%)';
+      });
+      
+      </script>
+
         <hr style="color:#1878d8;">
 
 
