@@ -29,31 +29,25 @@ permalink: /seminar_concert_2025
           <p class='text-justify'>At <a href="https://smcnus.comp.nus.edu.sg/" style="color:#1878d8;" target="_blank">NUS Sound and Music Computing (SMC) Lab</a>, innovation doesn't always sound like code — sometimes, it sounds like music. The Sound & Music Computing for Human Health & Potential (SMC4HHP) Seminar & Concert 2025 brought together students, staff, and friends of SMC Lab and School of Computing (SoC) for an inspiring afternoon where technology met artistry — and algorithms met emotion.</p>
 
           <p class='text-justify'>From a seminar on human voice production by South Korean performer MinJee Kim, to student performances spanning classical, jazz, soft rock, and traditional music, the event showcased how computing can amplify creativity and connection. Now in its fourth year, this initiative — led by Prof. Ye Wang and the SMC Lab, and supported by SoC Student Life — continues to remind us that behind every system and signal lies something profoundly human. [<a href="archive/concert/2025_concert_program_sheet.png" target="_blank" style="color:#1878d8;">program sheet</a>]</p>
+          
         </div>
       </div>
 
-
-      <div class="row" id="">
-        
+      <!--make a navigation bar-->
+      <div class="row">
         <div style="position: fixed; left: 0; top: 60px; width: 20%; height: calc(100vh - 60px); background-color: #fdf1ed; border-radius: 0 8px 8px 0; border-right: 0px solid #1878d8; overflow-y: auto; padding: 20px 10px; z-index: 100; transition: transform 0.3s ease; transform: translateX(0);" id="sideNav">
-
           <h4 class="text-center" style="color: #FF6347;">Event Program</h4>
           <hr style="color:#1878d8;">
-          
           <p class='text-center' style="font-size: 15px;"><b style="color:#FF6347;">Opening Remarks</b></p>
           <p class="text-center" style="font-size: 13px;"><a href="#intro" style="color:#1878d8; text-decoration: none;">Opening Remarks - Prof. Ye Wang</a></p>   
-
           <p class='text-center' style="font-size: 15px; margin-top: 15px;"><b style="color:#FF6347;">Seminar Talk</b></p>
-
           <p class="text-center" style="font-size: 13px;"><a href="#00" style="color:#1878d8; text-decoration: none;">Human Voice Production: How to Use Your Voice Effectively but Wisely - Ms. Minjee Kim</a></p>
-          
           <p class='text-center' style="font-size: 15px; margin-top: 15px;"><b style="color:#FF6347;">Concert Program</b></p>
-          
-          <ol style="font-size: 13px; padding-left: 70px; margin: 0px;">
-            <li style="margin-bottom: 5px;"><a href="#01" style="color:#1878d8; text-decoration: none;">Bird Poem</a></li>
+          <ol style="font-size: 13px; padding-left: 25%; margin: 0px;">
+            <li style="margin-bottom: 5px;"><a href="#01" style="color:#1878d8; text-decoration: none;">Bird's Poem (鳥の詩)</a></li>
             <li style="margin-bottom: 5px;"><a href="#02" style="color:#1878d8; text-decoration: none;">Like A Star</a></li>
             <li style="margin-bottom: 5px;"><a href="#03" style="color:#1878d8; text-decoration: none;">Indian Traditional Music</a></li>
-            <li style="margin-bottom: 5px;"><a href="#04" style="color:#1878d8; text-decoration: none;">Say It</a></li>
+            <li style="margin-bottom: 5px;"><a href="#04" style="color:#1878d8; text-decoration: none;">Say It (言って)</a></li>
             <li style="margin-bottom: 5px;"><a href="#05" style="color:#1878d8; text-decoration: none;">Sing For Absolution</a></li>
             <li style="margin-bottom: 5px;"><a href="#06" style="color:#1878d8; text-decoration: none;">Sonatina in C</a></li>
             <li style="margin-bottom: 5px;"><a href="#07" style="color:#1878d8; text-decoration: none;">Lydia</a></li>
@@ -63,195 +57,204 @@ permalink: /seminar_concert_2025
             <li style="margin-bottom: 5px;"><a href="#11" style="color:#1878d8; text-decoration: none;">Body and Soul</a></li>
             <li><a href="#12" style="color:#1878d8; text-decoration: none;">Piano in the Dark & Through the Fire</a></li>
           </ol>
-
+          <p class='text-center' style="font-size: 15px; margin-top: 15px;"><b style="color:#FF6347;">Past Events</b></p>
+          <ul style="font-size: 13px; padding-left: 25%; margin: 0px;">
+            <li style="margin-bottom: 5px;"><a href="/seminar_concert_2024" style="color:#1878d8; text-decoration: none;">2024</a></li>
+            <li style="margin-bottom: 5px;"><a href="/concert_2023" style="color:#1878d8; text-decoration: none;">2023</a></li>
+            <li style="margin-bottom: 5px;"><a href="/seminar_concert_2022" style="color:#1878d8; text-decoration: none;">2022</a></li>
+          </ul>
         </div>
-        
         <div style="position: fixed; left: 0; top: 60px; width: 5px; height: calc(100vh - 60px); background-color: #FF6347; z-index: 99;">
           <div style="position: fixed; left: 5px; top: 80px; width: 40px; height: 40px; background-color: #fff9f7; border: 1px solid #1878d8; border-left: none; border-radius: 0 8px 8px 0; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 101;">
             <span style="font-size: 18px;">☰</span>
           </div>
         </div>
-        
       </div>
-
+      <!--js for making a navigation bar-->
       <script>
-      const sideNav = document.getElementById('sideNav');
-
-      // Hide nav by default on page load
-      sideNav.style.transform = 'translateX(-100%)';
-      sideNav.style.transition = 'none';
-      setTimeout(() => {
-        sideNav.style.transition = 'transform 0.3s ease';
-      }, 10);
-
-      document.addEventListener('mousemove', function(e) {
-        if (e.clientX < 300) {
-          sideNav.style.transform = 'translateX(0)';
-        } else {
-          sideNav.style.transform = 'translateX(-100%)';
-        }
-      });
-
-      sideNav.addEventListener('mouseleave', function() {
+        const sideNav = document.getElementById('sideNav');
+        // Hide nav by default on page load
         sideNav.style.transform = 'translateX(-100%)';
-      });
-      
+        sideNav.style.transition = 'none';
+        setTimeout(() => {
+          sideNav.style.transition = 'transform 0.3s ease';
+        }, 10);
+        let isInsideSideNav = false;
+        document.addEventListener('mousemove', function(e) {
+          if (e.clientX < 100) {
+            // Show when cursor approaches < 100 from outside
+            if (!isInsideSideNav) {
+              sideNav.style.transform = 'translateX(0)';
+            }
+            isInsideSideNav = true;
+          } else if (e.clientX > 300) {
+            // Hide when cursor moves from inside to > 300
+            if (isInsideSideNav) {
+              sideNav.style.transform = 'translateX(-100%)';
+            }
+            isInsideSideNav = false;
+          }
+        });
+        sideNav.addEventListener('mouseleave', function() {
+          sideNav.style.transform = 'translateX(-100%)';
+          isInsideSideNav = false;
+        });
       </script>
 
-        <hr style="color:#1878d8;">
 
+      <hr style="color:#1878d8;">
 
-        <div class="row small-padding" id="intro">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Opening]</b></p>
-        <p class='text-justify'>
-          Opening remarks by <em>Prof. Ye Wang</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/2z_hD24Ivrk?si=jN4wUyT4jEOuekWv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="intro">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Opening]</b></p>
+      <p class='text-justify'>
+        Opening remarks by <em>Prof. Ye Wang</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/2z_hD24Ivrk?si=jN4wUyT4jEOuekWv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="00">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Seminar]</b> Human Voice Production: How to Use Your Voice Effectively but Wisely</p>
-        <p class='text-justify'>In this seminar talk, Ms. Minjee Kim shares her experiences and insights on the human voice—how to use it wisely, protect it, and express ourselves through it. The presentation concludes with her performance of a Korean art song 연 (Longing).</p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/yvaXMHul_HY?si=4y2SMiEC4Sai_bpW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="00">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Seminar]</b> Human Voice Production: How to Use Your Voice Effectively but Wisely</p>
+      <p class='text-justify'>In this seminar talk, Ms. Minjee Kim shares her experiences and insights on the human voice—how to use it wisely, protect it, and express ourselves through it. The presentation concludes with her performance of a Korean art song 연 (Longing).</p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/yvaXMHul_HY?si=4y2SMiEC4Sai_bpW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="01">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-01]</b> Bird Poem</p>
-        <p class='text-justify'>
-          Piano performance by <em>Yuchen Wang</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/P6UR1y6EYdQ?si=a50tzkzM-BAYuHGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="01">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-01]</b> Bird's Poem (鳥の詩)</p>
+      <p class='text-justify'>
+        Music from <em>Air</em>. Piano performance by <em>Yuchen Wang</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/P6UR1y6EYdQ?si=a50tzkzM-BAYuHGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="02">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-02]</b> Like A Star</p>
-        <p class='text-justify'>
-          Guitar performance by <em>Longshen Ou</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/gjyJdfuPF9U?si=-Cag5-8ukXhXwKCv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="02">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-02]</b> Like A Star</p>
+      <p class='text-justify'>
+        Music by <em>Youngso Kim</em>. Guitar performance by <em>Longshen Ou</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/gjyJdfuPF9U?si=-Cag5-8ukXhXwKCv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="03">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-03]</b> Indian Traditional Music</p>
-        <p class='text-justify'>
-          Vocal performance by <em>Ram Gopalakrishnan</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/ltazRzXw_Ks?si=UwJFMm9so0W1jwr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="03">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-03]</b> Indian Traditional Music</p>
+      <p class='text-justify'>
+        Vocal performance by <em>Ram Gopalakrishnan</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/ltazRzXw_Ks?si=UwJFMm9so0W1jwr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="04">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-04]</b> Say It</p>
-        <p class='text-justify'>
-          Clarinet by <em>Stan Ma</em>. Piano by <em>Wei Zeng</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/mkHjg18xyys?si=QK9i3ZobMI_JvnZG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="04">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-04]</b> Say It (言って)</p>
+      <p class='text-justify'>
+        Music by <em>Yorushika</em>. Performance by <em>Stan Ma</em> (clarinet) and <em>Wei Zeng</em> (piano).
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/mkHjg18xyys?si=QK9i3ZobMI_JvnZG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="05">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-05]</b> Sing for Absolution</p>
-        <p class='text-justify'>
-          Band performance by <em>Tran Thien Nhan</em> (vocals), <em>Wei Zeng</em> (piano), <em>Kang Lai</em> (guitar), <em>Wilson</em> (bass), and <em>Jingxiang Guo</em> (drum).
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/KU4wOG5gpjA?si=exTNNzM9HmaKSlCO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="05">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-05]</b> Sing for Absolution</p>
+      <p class='text-justify'>
+        Music by <em>Muse</em>. Band performance by <em>Tran Thien Nhan</em> (vocals), <em>Wei Zeng</em> (piano), <em>Kang Lai</em> (guitar), <em>Wilson</em> (bass), and <em>Jingxiang Guo</em> (drum).
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/KU4wOG5gpjA?si=exTNNzM9HmaKSlCO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="06">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-06]</b> Sonatina in C</p>
-        <p class='text-justify'>
-          Piano performance by <em>Jing Han</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/o1INT1rFBdw?si=14QkWsCt7yIBqPQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="06">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-06]</b> Sonatina in C</p>
+      <p class='text-justify'>
+        Music by <em>Kuhlan</em>. Piano performance by <em>Jing Han</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/o1INT1rFBdw?si=14QkWsCt7yIBqPQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="07">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-07]</b> Lydia</p>
-        <p class='text-justify'>
-          Piano performance by <em>Wei Zeng</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/65NmNlXilRk?si=Al0bOHN24bvVF_oj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="07">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-07]</b> Lydia</p>
+      <p class='text-justify'>
+        Music by <em>F.I.R.</em> Piano performance by <em>Wei Zeng</em>.
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/65NmNlXilRk?si=Al0bOHN24bvVF_oj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="08">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-08]</b> Serenity</p>
-        <p class='text-justify'>
-          Violin by <em>Yuchen Wang</em>. Clarinet by <em>Stan Ma</em>.
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/MOCBlBDjnWk?si=M1c5FIbRNHX4prsw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="08">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-08]</b> Serenity</p>
+      <p class='text-justify'>
+        Music by <em>Jonathan Segovia</em>. Performance by <em>Yuchen Wang</em> (violin) and <em>Stan Ma</em> (clarinet).
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/MOCBlBDjnWk?si=M1c5FIbRNHX4prsw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="09">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-09]</b> Omens of Love</p>
-        <p class='text-justify'>
-          Band performance by <em>Wei Zeng</em> (piano), <em>Nic Wong</em> (bass), <em>Wilson</em> (drum), <em>Kang Lai</em> (guitar), and <em>Stan</em> (clarinet).
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/mUUdnYhTiYY?si=_Jb0KVpYKLtiZRf2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="09">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-09]</b> Omens of Love</p>
+      <p class='text-justify'>
+        Music by <em>T-Square</em>. Band performance by <em>Wei Zeng</em> (piano), <em>Nic Wong</em> (bass), <em>Wilson</em> (drum), <em>Kang Lai</em> (guitar), and <em>Stan</em> (clarinet).
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/mUUdnYhTiYY?si=_Jb0KVpYKLtiZRf2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="10">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-10]</b> Just the Two of Us</p>
-        <p class='text-justify'>
-          Band performance by <em>Nan Lu</em> (piano), <em>Nic Wong</em> (bass), <em>Jingxiang Guo</em> (drum), <em>Jingxuan Zhu</em> (guitar), <em>Stan Ma</em> (clarinet), and <em>Junchuan Zhao</em> (vocals).
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/QuLW4si66jg?si=FKYbwD2TIf4PtQrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="10">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-10]</b> Just the Two of Us</p>
+      <p class='text-justify'>
+        Music by <em>Grover Washington Jr.</em> and <em>Bill Withers</em>. Band performance by <em>Nan Lu</em> (piano), <em>Nic Wong</em> (bass), <em>Jingxiang Guo</em> (drum), <em>Jingxuan Zhu</em> (guitar), <em>Stan Ma</em> (clarinet), and <em>Junchuan Zhao</em> (vocals).
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/QuLW4si66jg?si=FKYbwD2TIf4PtQrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="11">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-11]</b> Body and Soul</p>
-        <p class='text-justify'>
-          Tenor duet by <em>Tran Thien Nhan</em> and <em>Junchuan Zhao</em>. 
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/w4yMKby7cvo?si=Gij2cmZSW8l3qJhW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="11">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-11]</b> Body and Soul</p>
+      <p class='text-justify'>
+        Music by <em>Johnny Greens</em>. Lyrics by <em>Heyman</em>, <em>Robert Sour</em>, and <em>Frank Eyton</em>. Vocal duet performance by <em>Tran Thien Nhan</em> and <em>Junchuan Zhao</em>. 
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/w4yMKby7cvo?si=Gij2cmZSW8l3qJhW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
 
-        <div class="row small-padding" id="12">
-          <p></p>
-        </div>
-        <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-12]</b> Piano in the Dark & Through the Fire</p>
-        <p class='text-justify'>
-          Band performance by <em>Junchuan Zhao</em> (vocals), <em>Noah</em> (piano), <em>Wilson</em> (guitar), <em>Nic Wong</em> (bass), and <em>Jingxiang Guo</em> (drum)
-        </p>
-        <p class="text-center">
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/KkQAtP5fw8Q?si=VyeDorLnzfdbGPmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </p>
+      <div class="row small-padding" id="12">
+        <p></p>
+      </div>
+      <p class="h3" style="color:#FF6347;"><b style="color:#1878d8;">[Concert-12]</b> Piano in the Dark & Through the Fire</p>
+      <p class='text-justify'>
+        Music by <em>Breda Russell</em> and <em>Chaka Khan</em>. Band performance by <em>Junchuan Zhao</em> (vocals), <em>Noah</em> (piano), <em>Wilson</em> (guitar), <em>Nic Wong</em> (bass), and <em>Jingxiang Guo</em> (drum)
+      </p>
+      <p class="text-center">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/KkQAtP5fw8Q?si=VyeDorLnzfdbGPmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
    
     </div>
     
