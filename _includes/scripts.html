@@ -14,7 +14,8 @@
 
 <script>
 
-    let slideIndex = 1;
+    let slides = document.getElementsByClassName("mySlides");
+    let slideIndex = Math.floor(Math.random() * slides.length) + 1;
     let slideTimer;
     let mouseOnSlide = false;
     showSlides(slideIndex);
